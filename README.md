@@ -6,7 +6,7 @@ The link of the TMFN's paper is as follows:
 The next part is a readme that tell you how to use our code to achieve the TMFN, if you have any question pls contact me.
 
 ___
-
+```text
 1. Explian of the program construction
 TMFN/
 ├── configs/                # Save the hyperparameter settings
@@ -27,3 +27,4 @@ TMFN/
 ├── run_experiment.py       # Main procedure entrance
 ├── requirements.txt        # Dependency list
 └── README.md
+```
