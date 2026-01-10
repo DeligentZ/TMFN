@@ -62,7 +62,7 @@ For CMU-MOSEI, CH-SIMS, You could use "extract_audio.py" and "extract_video.py" 
 For UR-FUNNY, it consists of two steps. Firstly, you will extract the feature by "extract_audio_ur_funny.py" and "extract_video_ur_funny.py". Then, you have to rebuild the label of the ur-funny dataset through "generate_label4urfunny.py"
 
 
-# Please attention: befor you run the code, please set and check the path of your dataset location.
+__Please attention: befor you run the code, please set and check the path of your dataset location.__
 # 5. Run experiment
 
 
