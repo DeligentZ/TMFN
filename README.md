@@ -25,8 +25,7 @@ TMFN/
 │   ├── extract_video.py
 │   ├── Extract_video_ur_funny.py
 │   ├── generate_label4urfunny.py
-│   ├── metricsTop.py
-│   └── plot.py
+│   └── metricsTop.py
 ├── dataloader.py           # Data loading logic
 ├── trainer.py              # Model training logic
 ├── run_experiment.py       # Main procedure entrance
@@ -64,4 +63,7 @@ For UR-FUNNY, it consists of two steps. Firstly, you will extract the feature by
 
 
 # Please attention: befor you run the code, please set and check the path of your dataset location.
-# 5. 
+# 5. Run experiment
+
+
+You could run the experiment by "run_experiment". Before that you could check the default setting of the hyperparameter in "config/default.yaml"
