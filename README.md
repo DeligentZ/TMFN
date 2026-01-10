@@ -1,6 +1,8 @@
 # TMFN-Text-Guided-Mamba-Fusion-Network-for-Efficient-Multimodal-Sentiment-Analysis
 TMFN is a fusion network for efficient multimodal sentiment analysis, it consists a parameter-efficient adapter, a mamba-based single-layer encoder, a text-guided cross-attention, and employ text modalities as a semantic anchor in subsequent fusion stage. The architecture of TMFN is as follows：
-![img.png](overall_architecture.png)
+<p align="center">
+  <img src="overall_architecture.png" width="600" alt="架构图">
+</p>
 
 
 The link of the TMFN's paper is as follows:
