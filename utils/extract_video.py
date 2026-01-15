@@ -69,10 +69,11 @@ def process_dataset(video_dir, save_dir, suffix = ".mp4"):
 
 
 if __name__ == '__main__':
-    dataset_name = "SIMS"# MOSI, MOSEI, SIMS
+    dataset_name = "SIMS"#MOSEI, SIMS
     input_video_dir = f"/{dataset_name}/Raw/"
     output_tensor_dir = f"{dataset_name}/wav"
     process_dataset(input_video_dir, output_tensor_dir)
+
 
 
 
