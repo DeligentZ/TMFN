@@ -14,8 +14,6 @@ class Trainer:
         self.config = config
         self.dataset_name = config["dataset_name"]
         self.model_save_path = config["model_save_path"]
-
-        self.mse = torch.nn.functional.mse_loss
         self.metrics = MetricsTop("regression").getMetics(config["dataset_name"])
         self.scaler = GradScaler()
         self.best_epoch = 0
@@ -44,8 +42,7 @@ class Trainer:
             with (autocast()):
                 outputs = model(*inputs)
                 loss = self.criterion(outputs, targets)
-                loss_mse = self.mse(outputs, targets)
-                loss = loss + 0.03 * loss_mse
+                loss = loss
             self.scaler.scale(loss).backward() # scale the loss and compute the gradient.
             self.scaler.unscale_(optimizer) # unscale the loss for clop_gradient
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -72,8 +69,6 @@ class Trainer:
                 targets = batch["targets"].to(device).view(-1, 1)
                 outputs = model(*inputs)
                 loss = self.criterion(outputs, targets)
-                loss_mse = self.mse(outputs, targets)
-                loss = loss + 0.03 * loss_mse
                 total_loss += loss.item() * targets.size(0)
                 y_pred.append(outputs.cpu())
                 y_true.append(targets.cpu())
@@ -250,6 +245,7 @@ class Trainer:
         print(f"✅ Saved prediction details to {save_path}")
 def _dict_to_str( d):
     return ' '.join([f'{k}: {v:.4f}' for k, v in d.items()])
+
 
 
 
