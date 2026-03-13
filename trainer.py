@@ -42,7 +42,6 @@ class Trainer:
             with (autocast()):
                 outputs = model(*inputs)
                 loss = self.criterion(outputs, targets)
-                loss = loss
             self.scaler.scale(loss).backward() # scale the loss and compute the gradient.
             self.scaler.unscale_(optimizer) # unscale the loss for clop_gradient
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -245,6 +244,7 @@ class Trainer:
         print(f"✅ Saved prediction details to {save_path}")
 def _dict_to_str( d):
     return ' '.join([f'{k}: {v:.4f}' for k, v in d.items()])
+
 
 
 
